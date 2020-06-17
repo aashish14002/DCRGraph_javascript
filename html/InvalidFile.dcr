@@ -1,0 +1,12 @@
+Receive Message () {
+    Receive Message *--> Respond Message
+    Receive Message -->+ Respond Message
+    Receive Message -->% Receive Message
+},
+
+Respond-Message (0,0,0) {
+    Respond-Message -->+ Receive Message
+    Respond-Message -->% Respond-Message
+},
+
+Send Message <Message Sent> ()

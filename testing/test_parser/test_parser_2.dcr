@@ -1,0 +1,10 @@
+Event1(),
+
+Event2 <label> (1,0,0),
+
+Event3(0,1,0)
+{
+
+},
+
+Event4<label>(0,0,1){}

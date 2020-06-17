@@ -1,0 +1,90 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="icon" href="img/dcr.png">
+  <link rel="stylesheet" href="css/main.css">
+  <script defer type="text/javascript" src="scripts/bundle.js"></script>
+  <meta name="theme-color" content="#fafafa">
+</head>
+
+<body>
+  
+  <header class="header">
+    <div class="logo">
+      <img src="img/dcr.png"  alt="DCR Engine" height="60">
+    </div>
+    <div>
+      <input type="file" name="file" id="file" class="inputfile" />
+      <label for="file" class="upload-button">
+        <img src="img/upload-graph.png" height="25"> 
+        <span>Upload DCR Graph</span>
+      </label>
+    </div>
+  </header>
+
+  <section class="display-container">
+
+    <div id="eventsTable" class="display-section">
+      <div class="display-section-heading">
+        <h4><b>DCR Graph List</b></h4> 
+      </div>
+      <br>
+      <div class="display-section-scroll">
+        <table class="display-section-table">
+          <thead>
+            <tr>
+              <th>Event Name</th>
+              <th>Pending</th>
+              <th>Included</th>
+              <th>Executed</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="display-section">
+      <div class="display-section-heading">
+        <div><h4><b>Action Logs</b></h4></div>
+        <div> 
+          <a id="save" class="save-logs"> 
+            <img src="img/download.png" height="20"> 
+          </a>
+        </div>
+      </div>
+      <br>
+      <div class="display-section-scroll">
+        <table id="logTable" class="display-section-log">
+          <tbody>
+          </tbody>
+        </table>
+      </div>
+    </div> 
+
+  </section>
+
+  <footer>
+    
+  </footer>
+  
+
+  
+</body>
+
+</html>

@@ -1,0 +1,5 @@
+Event1(),
+
+Event2(){
+    Event1 -->+ Event2 Event2 -->% Event2
+}

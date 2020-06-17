@@ -1,0 +1,114 @@
+A_SUBMITTED(0,1,0){
+  A_SUBMITTED *--> A_PARTLYSUBMITTED
+  A_SUBMITTED -->+ A_PARTLYSUBMITTED
+  A_SUBMITTED -->% A_SUBMITTED
+},
+A_PARTLYSUBMITTED(0,1,0){
+  A_SUBMITTED -->* A_PARTLYSUBMITTED
+  A_PARTLYSUBMITTED -->% A_PARTLYSUBMITTED
+},
+A_PREACCEPTED(0,1,0){
+  A_PARTLYSUBMITTED -->* A_PREACCEPTED
+  A_PREACCEPTED *--> W_Completeren aanvraag
+  A_PREACCEPTED -->% A_PREACCEPTED
+},
+W_Completeren aanvraag(0,1,0){
+  A_PARTLYSUBMITTED -->* W_Completeren aanvraag
+  W_Completeren aanvraag -->+ A_ACCEPTED
+},
+A_ACCEPTED(0,1,0){
+  A_PREACCEPTED -->* A_ACCEPTED
+  W_Completeren aanvraag -->* A_ACCEPTED
+  A_ACCEPTED *--> W_Completeren aanvraag
+  A_ACCEPTED -->% A_ACCEPTED
+  A_ACCEPTED -->% W_Afhandelen leads
+},
+O_SELECTED(0,1,0){
+  A_ACCEPTED -->* O_SELECTED
+  O_SELECTED *--> O_CREATED
+},
+A_FINALIZED(0,1,0){
+  A_ACCEPTED -->* A_FINALIZED
+  A_FINALIZED *--> W_Completeren aanvraag
+  A_FINALIZED *--> O_CREATED
+  A_FINALIZED *--> W_Nabellen offertes
+  A_FINALIZED -->% A_FINALIZED
+},
+O_CREATED(0,1,0){
+  O_SELECTED -->* O_CREATED
+  A_FINALIZED -->* O_CREATED
+  O_CREATED *--> O_SENT
+  O_CREATED -->+ O_SENT
+},
+O_SENT(0,1,0){
+  O_CREATED -->* O_SENT
+  O_SENT -->% O_SENT
+},
+W_Nabellen offertes(0,1,0){
+  O_SELECTED -->* W_Nabellen offertes
+  A_FINALIZED -->* W_Nabellen offertes
+},
+O_SENT_BACK(0,1,0){
+  O_SENT -->* O_SENT_BACK
+  W_Nabellen offertes -->* O_SENT_BACK
+  O_SENT_BACK *--> W_Valideren aanvraag
+},
+W_Valideren aanvraag(0,1,0){
+  O_SENT_BACK -->* W_Valideren aanvraag
+},
+A_REGISTERED(0,1,0){
+  W_Valideren aanvraag -->* A_REGISTERED
+  A_REGISTERED -->% A_REGISTERED
+},
+A_APPROVED(0,1,0){
+  W_Valideren aanvraag -->* A_APPROVED
+  A_APPROVED -->% A_APPROVED
+},
+O_ACCEPTED(0,1,0){
+  W_Valideren aanvraag -->* O_ACCEPTED
+  O_ACCEPTED -->% O_ACCEPTED
+},
+A_ACTIVATED(0,1,0){
+  W_Valideren aanvraag -->* A_ACTIVATED
+  A_ACTIVATED -->% A_ACTIVATED
+},
+O_CANCELLED(0,1,0){
+  O_SENT -->* O_CANCELLED
+  W_Nabellen offertes -->* O_CANCELLED
+},
+W_Wijzigen contractgegevens(0,1,0){
+  O_SENT -->* W_Wijzigen contractgegevens
+  W_Nabellen offertes -->* W_Wijzigen contractgegevens
+},
+A_DECLINED(0,1,0){
+  A_PARTLYSUBMITTED -->* A_DECLINED
+  A_DECLINED -->% A_DECLINED
+},
+A_CANCELLED(0,1,0){
+  A_PARTLYSUBMITTED -->* A_CANCELLED
+  A_CANCELLED -->% O_SELECTED
+  A_CANCELLED -->% O_CREATED
+  A_CANCELLED -->% O_SENT_BACK
+  A_CANCELLED -->% A_REGISTERED
+  A_CANCELLED -->% A_APPROVED
+  A_CANCELLED -->% O_ACCEPTED
+  A_CANCELLED -->% A_ACTIVATED
+  A_CANCELLED -->% A_DECLINED
+  A_CANCELLED -->% A_CANCELLED
+  A_CANCELLED -->% O_DECLINED
+},
+W_Afhandelen leads(0,1,0){
+  A_PARTLYSUBMITTED -->* W_Afhandelen leads
+},
+O_DECLINED(0,1,0){
+  O_SENT -->* O_DECLINED
+  W_Nabellen offertes -->* O_DECLINED
+  O_DECLINED -->% O_DECLINED
+},
+W_Nabellen incomplete dossiers(0,1,0){
+  W_Valideren aanvraag -->* W_Nabellen incomplete dossiers
+  W_Nabellen incomplete dossiers -->% W_Nabellen offertes
+},
+W_Beoordelen fraude(0,1,0){
+  A_PARTLYSUBMITTED -->* W_Beoordelen fraude
+}
