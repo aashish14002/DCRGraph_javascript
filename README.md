@@ -5,6 +5,9 @@ Refer this tutorial for setting up the project first time:
 https://www.codementor.io/@iykyvic/writing-your-nodejs-apps-using-es6-6dh0edw2o
 The json-file also needs to be in the directory.
 
+### My Contribution: 
+Bulding UI and Front-end solution for the application.
+
 ### Installation:
 
 1. Install npm if not installed already.
