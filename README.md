@@ -1,12 +1,17 @@
 # DCRGraph_javaScript
 Javascript implementation of dcr-engine - the original code can be found here: https://github.com/tslaats/OODCREngine.
+A browser compatible JavaScript version of the Java DCR Engine (can be found here: https://github.com/tslaats/OODCREngine).
+Dynamic Condition Response graphs (DCR graphs) is a business process model tool, which focus oncapturing the business and compliance rules constraining the order of activities and events. Compared toa flow diagram the DCR Graphs only maps possible events and the rules constraining their order. Events can be executed which allows one to use DCR graphs for analyzing such models.(dcrgraphs.https://wiki.dcrgraphs.net/dcr/)
+Open the index.html which can be found in the release directory (compiled version of the code) to run the engine. 
+![alt text](https://github.com/aashish14002/DCRGraph_javascript/blob/master/DCR-Graph-Engine-UI.png?raw=true)
+
+
+### My Contribution: 
+Bulding UI and Front-end solution for the application.
 
 Refer this tutorial for setting up the project first time:
 https://www.codementor.io/@iykyvic/writing-your-nodejs-apps-using-es6-6dh0edw2o
 The json-file also needs to be in the directory.
-
-### My Contribution: 
-Bulding UI and Front-end solution for the application.
 
 ### Installation:
 
