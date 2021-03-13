@@ -9,6 +9,7 @@ Open the index.html which can be found in the release directory (compiled versio
 
 
 ### My Contribution: 
+Followed Scrum agile methodology for development
 Bulding UI and Front-end solution for the application.
 
 Refer this tutorial for setting up the project first time:
